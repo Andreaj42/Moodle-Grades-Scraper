@@ -26,7 +26,7 @@ class Mootse():
         }
         session.post(login_url, data=login_data)
 
-        # Scrapping des notes
+        # Scrapping des url des notes
         notes_url = "***REMOVED***/grade/report/overview/index.php"
         notes_response = session.get(notes_url)
         notes_soup = BeautifulSoup(notes_response.text, "html.parser")
@@ -38,30 +38,3 @@ class Mootse():
         with open("url.txt", "w", encoding="utf-8") as f:
             for content in contents:
                 f.write(content + "\n")
-
-        # Passage sur chaque matière
-        with open("url.txt", "r", encoding="utf-8") as f:
-            for line in f:
-                parts = line.strip().split(" : ")
-                url = parts[0]
-                tag = parts[1]
-                response = session.get(url)
-                test = BeautifulSoup(response.text, "html.parser")
-
-                """ douteux """
-                tbody = test.tbody
-                links = tbody.find_all("td")
-                chaine = [str(l) for l in links]
-
-                with open("temp.txt", "r", encoding="utf-8")as f2:
-                    for line in f2:
-                        if f2 != ('\n' + tag + chaine):
-                            self.alert(tag)
-
-                with open("temp.txt", "w", encoding="utf-8") as f3:
-                    f3.write('\n' + tag)
-                    for c in chaine:
-                        f3.write(c)
-
-        def alert(self, tag):
-            print(f"nouvelle note dans : {tag}")
