@@ -1,0 +1,24 @@
+<tbody>
+<tr>
+<td class="level1 levelodd oddd1 b1t b2b b1l column-leader" rowspan="3"></td>
+<th class="level1 levelodd oddd1 b1b b1t column-itemname" colspan="7" id="cat_1119_2732"><i aria-label="Catégorie" class="icon fa fa-folder fa-fw icon itemicon" role="img" title="Catégorie"></i>Traitement du signal</th>
+</tr>
+<tr>
+<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_7875_2732"><span class="gradeitemheader" tabindex="0" title="note finale"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>note finale</span></th>
+<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1119_2732 row_7875_2732 weight">-</td>
+<td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1119_2732 row_7875_2732 grade">-</td>
+<td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1119_2732 row_7875_2732 range">0–20</td>
+<td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1119_2732 row_7875_2732 percentage">-</td>
+<td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1119_2732 row_7875_2732 feedback"> </td>
+<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1119_2732 row_7875_2732 contributiontocoursetotal">-</td>
+</tr>
+<tr>
+<th class="level1 levelodd oddd1 baggt b2b column-itemname" colspan="1" id="row_6208_2732"><span class="gradeitemheader" tabindex="0" title="Note finale du module"><img alt="Moyenne des notes" class="icon icon itemicon" src="https://mootse.telecom-st-etienne.fr/theme/image.php/boost/core/1657547879/i/agg_mean" title="Moyenne des notes"/>Note finale du module</span><div class="gradeitemdescription">Moyenne des notes.</div><div class="gradeitemdescriptionfiller"></div></th>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-weight" headers="cat_1119_2732 row_6208_2732 weight">-</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-grade" headers="cat_1119_2732 row_6208_2732 grade">-</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-range" headers="cat_1119_2732 row_6208_2732 range">0–20</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-percentage" headers="cat_1119_2732 row_6208_2732 percentage">-</td>
+<td class="level1 levelodd oddd1 baggt b2b feedbacktext column-feedback" headers="cat_1119_2732 row_6208_2732 feedback"> </td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-contributiontocoursetotal" headers="cat_1119_2732 row_6208_2732 contributiontocoursetotal">-</td>
+</tr>
+</tbody>

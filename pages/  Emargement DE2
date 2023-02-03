@@ -1,0 +1,15 @@
+<tbody>
+<tr>
+<td class="level1 levelodd oddd1 b1t b2b b1l column-leader" rowspan="2"></td>
+<th class="level1 levelodd oddd1 b1b b1t column-itemname" colspan="7" id="cat_1254_2732"><i aria-label="Catégorie" class="icon fa fa-folder fa-fw icon itemicon" role="img" title="Catégorie"></i>  Emargement DE2</th>
+</tr>
+<tr>
+<th class="level1 levelodd oddd1 baggt b2b column-itemname" colspan="1" id="row_7157_2732"><span class="gradeitemheader" tabindex="0" title="Note finale du module"><img alt="Moyenne pondérée des notes" class="icon icon itemicon" src="https://mootse.telecom-st-etienne.fr/theme/image.php/boost/core/1657547879/i/agg_mean" title="Moyenne pondérée des notes"/>Note finale du module</span><div class="gradeitemdescription">Moyenne pondérée des notes.</div><div class="gradeitemdescriptionfiller"></div></th>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-weight" headers="cat_1254_2732 row_7157_2732 weight">-</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-grade" headers="cat_1254_2732 row_7157_2732 grade">-</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-range" headers="cat_1254_2732 row_7157_2732 range">0–20</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-percentage" headers="cat_1254_2732 row_7157_2732 percentage">-</td>
+<td class="level1 levelodd oddd1 baggt b2b feedbacktext column-feedback" headers="cat_1254_2732 row_7157_2732 feedback"> </td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-contributiontocoursetotal" headers="cat_1254_2732 row_7157_2732 contributiontocoursetotal">-</td>
+</tr>
+</tbody>

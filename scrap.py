@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import configparser
+from mail import alert
 
 
 class Mootse():
@@ -38,3 +39,16 @@ class Mootse():
         with open("url.txt", "w", encoding="utf-8") as f:
             for content in contents:
                 f.write(content + "\n")
+
+        with open('url.txt','r', encoding="utf-8") as f1 :
+            for line in f1:
+                parts = line.strip().split(" : ")
+                temp = session.get(parts[0])
+                temp = BeautifulSoup(temp.text, "html.parser")
+                temp = temp.tbody
+                with open("pages/" + parts[1], "r", encoding ="utf-8") as f2:
+                    contents = f2.read()
+                    if contents != str(temp):
+                        with open("pages/" + parts[1], "w", encoding ="utf-8") as f2:
+                            f2.write(str(temp))
+                            alert(parts[1])
