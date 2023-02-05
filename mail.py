@@ -1,9 +1,9 @@
 import smtplib
 
 def alert(matiere):
-    sender = "***REMOVED***"
+    sender = ""
     receiver_email = []
-    password = "***REMOVED***"
+    password = ""
     with open("mail.txt", "r") as f:
         for line in f:
             receiver_email.append(line)
