@@ -1,9 +1,9 @@
 import smtplib
 
 def alert(matiere):
-    sender = "poubelleproust@perfeito.fr"
+    sender = ""
     receiver_email = []
-    password = "|nONQXlkbroKwz![HPc5~D=*EUB7Hd(N:tu1]Qj"
+    password = ""
     with open("mail.txt", "r") as f:
         for line in f:
             receiver_email.append(line)
