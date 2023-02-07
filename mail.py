@@ -1,13 +1,16 @@
 import smtplib
 import traceback
+import configparser
 from logging import getLogger
 
 
 def alert(matiere, path):
+    config = configparser.ConfigParser()
+    config.read(path+"config.ini")
     logger = getLogger()
-    sender = "***REMOVED***"
+    sender = config["login Mail"]["mail"]
     receiver_email = []
-    password = "***REMOVED***"
+    password = config["login Mail"]["password"]
     try:
         with open(path+"mail.txt", "r") as f:
             for line in f:
