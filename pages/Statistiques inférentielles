@@ -4,27 +4,27 @@
 <th class="level1 levelodd oddd1 b1b b1t column-itemname" colspan="8" id="cat_1120_2732"><i aria-label="Catégorie" class="icon fa fa-folder fa-fw icon itemicon" role="img" title="Catégorie"></i>Statistiques inférentielles</th>
 </tr>
 <tr>
-<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_6492_2732"><span class="gradeitemheader" tabindex="0" title="Note Premier contrôle"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>Note Premier contrôle</span></th>
-<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1120_2732 row_6492_2732 weight">100,00 %</td>
+<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_6492_2732"><span class="gradeitemheader" tabindex="0" title="Premier examen"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>Premier examen</span></th>
+<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1120_2732 row_6492_2732 weight">50,00 %</td>
 <td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1120_2732 row_6492_2732 grade">15,00</td>
 <td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1120_2732 row_6492_2732 range">0–20</td>
 <td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1120_2732 row_6492_2732 percentage">75,00 %</td>
 <td class="level2 leveleven item b1b itemcenter column-average" headers="cat_1120_2732 row_6492_2732 average">11,78</td>
 <td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1120_2732 row_6492_2732 feedback"><div class="text_to_html">dont bonus de 1 pour DM</div></td>
-<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1120_2732 row_6492_2732 contributiontocoursetotal">75,00 %</td>
+<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1120_2732 row_6492_2732 contributiontocoursetotal">37,50 %</td>
 </tr>
 <tr>
-<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_6493_2732"><span class="gradeitemheader" tabindex="0" title="Note du Second contrôle"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>Note du Second contrôle</span></th>
-<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1120_2732 row_6493_2732 weight">0,00 %<br/>(vide)</td>
-<td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1120_2732 row_6493_2732 grade">-</td>
-<td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1120_2732 row_6493_2732 range">0–20</td>
-<td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1120_2732 row_6493_2732 percentage">-</td>
-<td class="level2 leveleven item b1b itemcenter column-average" headers="cat_1120_2732 row_6493_2732 average">-</td>
+<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_6493_2732"><span class="gradeitemheader" tabindex="0" title="Stats Cup"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>Stats Cup</span></th>
+<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1120_2732 row_6493_2732 weight">50,00 %</td>
+<td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1120_2732 row_6493_2732 grade">7,50</td>
+<td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1120_2732 row_6493_2732 range">0–10</td>
+<td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1120_2732 row_6493_2732 percentage">75,00 %</td>
+<td class="level2 leveleven item b1b itemcenter column-average" headers="cat_1120_2732 row_6493_2732 average">7,63</td>
 <td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1120_2732 row_6493_2732 feedback"> </td>
-<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1120_2732 row_6493_2732 contributiontocoursetotal">0,00 %</td>
+<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1120_2732 row_6493_2732 contributiontocoursetotal">37,50 %</td>
 </tr>
 <tr>
-<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_10160_2732"><span class="gradeitemheader" tabindex="0" title="CCR"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>CCR</span></th>
+<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_10160_2732"><span class="gradeitemheader" tabindex="0" title="Examen Final"><i aria-label="Élément manuel" class="icon fa fa-square-o fa-fw icon itemicon" role="img" title="Élément manuel"></i>Examen Final</span></th>
 <td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1120_2732 row_10160_2732 weight">0,00 %<br/>(vide)</td>
 <td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1120_2732 row_10160_2732 grade">-</td>
 <td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1120_2732 row_10160_2732 range">0–20</td>
@@ -59,7 +59,7 @@
 <td class="level1 levelodd oddd1 baggt b2b itemcenter column-grade" headers="cat_1120_2732 row_6209_2732 grade">15,00</td>
 <td class="level1 levelodd oddd1 baggt b2b itemcenter column-range" headers="cat_1120_2732 row_6209_2732 range">0–20</td>
 <td class="level1 levelodd oddd1 baggt b2b itemcenter column-percentage" headers="cat_1120_2732 row_6209_2732 percentage">75,00 %</td>
-<td class="level1 levelodd oddd1 baggt b2b itemcenter column-average" headers="cat_1120_2732 row_6209_2732 average">11,78</td>
+<td class="level1 levelodd oddd1 baggt b2b itemcenter column-average" headers="cat_1120_2732 row_6209_2732 average">13,51</td>
 <td class="level1 levelodd oddd1 baggt b2b feedbacktext column-feedback" headers="cat_1120_2732 row_6209_2732 feedback"> </td>
 <td class="level1 levelodd oddd1 baggt b2b itemcenter column-contributiontocoursetotal" headers="cat_1120_2732 row_6209_2732 contributiontocoursetotal">-</td>
 </tr>
