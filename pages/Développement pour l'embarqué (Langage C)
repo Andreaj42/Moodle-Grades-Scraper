@@ -1,34 +1,25 @@
 <tbody>
 <tr>
-<td class="level1 levelodd oddd1 b1t b2b b1l column-leader" rowspan="5"></td>
+<td class="level1 levelodd oddd1 b1t b2b b1l column-leader" rowspan="4"></td>
 <th class="level1 levelodd oddd1 b1b b1t column-itemname" colspan="7" id="cat_1131_2732"><i aria-label="Catégorie" class="icon fa fa-folder fa-fw icon itemicon" role="img" title="Catégorie"></i>Développement pour l'embarqué (Langage C)</th>
 </tr>
 <tr>
-<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_9872_2732"><a class="gradeitemheader" href="https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=30935" title="Lien vers l'activité Devoir CR sujet2"><img alt="Devoir" class="icon itemicon" src="https://mootse.telecom-st-etienne.fr/theme/image.php/boost/assign/1657547879/icon"/>CR sujet2</a></th>
-<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1131_2732 row_9872_2732 weight">-</td>
-<td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1131_2732 row_9872_2732 grade">-</td>
-<td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1131_2732 row_9872_2732 range">0–20</td>
-<td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1131_2732 row_9872_2732 percentage">-</td>
-<td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1131_2732 row_9872_2732 feedback"> </td>
-<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1131_2732 row_9872_2732 contributiontocoursetotal">-</td>
-</tr>
-<tr>
-<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_9904_2732"><a class="gradeitemheader" href="https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=31061" title="Lien vers l'activité Devoir CR projet sujet3"><img alt="Devoir" class="icon itemicon" src="https://mootse.telecom-st-etienne.fr/theme/image.php/boost/assign/1657547879/icon"/>CR projet sujet3</a></th>
-<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1131_2732 row_9904_2732 weight">-</td>
-<td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1131_2732 row_9904_2732 grade">-</td>
-<td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1131_2732 row_9904_2732 range">0–20</td>
-<td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1131_2732 row_9904_2732 percentage">-</td>
-<td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1131_2732 row_9904_2732 feedback"> </td>
-<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1131_2732 row_9904_2732 contributiontocoursetotal">-</td>
-</tr>
-<tr>
 <th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_10001_2732"><a class="gradeitemheader" href="https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=31325" title="Lien vers l'activité Devoir CR projet final"><img alt="Devoir" class="icon itemicon" src="https://mootse.telecom-st-etienne.fr/theme/image.php/boost/assign/1657547879/icon"/>CR projet final</a></th>
-<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1131_2732 row_10001_2732 weight">-</td>
+<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1131_2732 row_10001_2732 weight">0,00 %<br/>(vide)</td>
 <td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1131_2732 row_10001_2732 grade">-</td>
 <td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1131_2732 row_10001_2732 range">0–20</td>
 <td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1131_2732 row_10001_2732 percentage">-</td>
 <td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1131_2732 row_10001_2732 feedback"> </td>
-<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1131_2732 row_10001_2732 contributiontocoursetotal">-</td>
+<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1131_2732 row_10001_2732 contributiontocoursetotal">0,00 %</td>
+</tr>
+<tr>
+<th class="level2 leveleven item b1b column-itemname" colspan="1" id="row_10898_2732"><a class="gradeitemheader" href="https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=34163" title="Lien vers l'activité Devoir evaluation du 06/02"><img alt="Devoir" class="icon itemicon" src="https://mootse.telecom-st-etienne.fr/theme/image.php/boost/assign/1657547879/icon"/>evaluation du 06/02</a></th>
+<td class="level2 leveleven item b1b itemcenter column-weight" headers="cat_1131_2732 row_10898_2732 weight">100,00 %</td>
+<td class="level2 leveleven item b1b itemcenter column-grade" headers="cat_1131_2732 row_10898_2732 grade">6,85</td>
+<td class="level2 leveleven item b1b itemcenter column-range" headers="cat_1131_2732 row_10898_2732 range">0–20</td>
+<td class="level2 leveleven item b1b itemcenter column-percentage" headers="cat_1131_2732 row_10898_2732 percentage">34,25 %</td>
+<td class="level2 leveleven item b1b feedbacktext column-feedback" headers="cat_1131_2732 row_10898_2732 feedback"> </td>
+<td class="level2 leveleven item b1b itemcenter column-contributiontocoursetotal" headers="cat_1131_2732 row_10898_2732 contributiontocoursetotal">34,25 %</td>
 </tr>
 <tr>
 </tr>

@@ -1,4 +1,3 @@
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=1026&user=2732 :   Emargement DE2
 https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=913&user=2732 : Traitement du signal
 https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=914&user=2732 : Statistiques inférentielles
 https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=915&user=2732 : Techniques de créativité
@@ -23,10 +22,3 @@ https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=934&user=2732
 https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=933&user=2732 : Journée de l'apprentissage 3
 https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=932&user=2732 : Retour d'apprentissage 3
 https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=967&user=2732 : Niveau en langue anglaise (1)
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=51&user=2732 : Mobilité sortante
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=62&user=2732 : Mobilité entrante
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=469&user=2732 : Expérience Internationale
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=471&user=2732 : Stages à l'étranger (FISE)
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=976&user=2732 : Financements
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=308&user=2732 : TOEIC
-https://mootse.telecom-st-etienne.fr/course/user.php?mode=grade&id=998&user=2732 : Workshop Pluridisciplinaire
