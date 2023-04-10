@@ -6,4 +6,4 @@ from lib.scrap.mootse_runner import MootseRunner
 
 if __name__ == "__main__":
     #MootseInit()
-    MootseRunner()
+    MootseRunner().run_check()
