@@ -1,5 +1,5 @@
 # Mootse
-1) Modifier le fichier config.ini avec vos idenfiants.
+1) Modifier le fichier config/config.py avec vos idenfiants (un fichier template est disponible config/config.py.tpl).
 2) Modifier la variable path pour correspondre à l'environnement.
 3) Dans le main, run le MootseInit().
 4) Modifier mail.txt (liste des destinataires).
@@ -10,5 +10,5 @@
 6) Mettre une crontab sur le main.
 
 ## Installation sous Windows
-* `pip install -r .\requirements.txt`
+* `pip install -e`
 * `python main.py`

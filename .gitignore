@@ -2,3 +2,6 @@ __pycache__/
 _venv/
 pages/
 config.ini
+config/config.py
+*.html
+.gitignore
