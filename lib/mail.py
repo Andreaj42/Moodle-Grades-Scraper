@@ -3,7 +3,7 @@ import traceback
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
-from logging import getLogger
+from logging import getLogger, INFO, Formatter, StreamHandler
 from typing import List
 
 class MailNotifier():
@@ -12,8 +12,13 @@ class MailNotifier():
         self.__smtp_password = smtp_password
         self.__smtp_server = smtp_server
         self.__smtp_port = smtp_port
-        self.logger = getLogger()
-
+        self.logger = getLogger(__name__)
+        self.logger.setLevel(INFO)
+        formatter = Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        ch = StreamHandler()
+        ch.setFormatter(formatter)
+        self.logger.addHandler(ch)
+        
     def __send_mail(self, msg: MIMEMultipart, recipient: str) -> None:
         try:
             server = smtplib.SMTP(self.__smtp_server, self.__smtp_port)
