@@ -22,7 +22,7 @@ class MootseRunner():
         self.logger.addHandler(ch)
 
         # Initialisation de la session
-        self.logger.info("Connection à Mootse...")
+        self.logger.info("Connexion à Mootse...")
         session = requests.Session()
         login_response = session.post(f"{MOOTSE_URL}/login/index.php")
 
@@ -37,7 +37,7 @@ class MootseRunner():
             "logintoken": token
         }
         session.post(f"{MOOTSE_URL}/login/index.php", data=login_data)
-        self.logger.info("Connection à Mootse réussie.")
+        self.logger.info("Connexion à Mootse réussie.")
 
         with open(path+'url.txt', 'r', encoding="utf-8") as f1:
             for line in f1:
