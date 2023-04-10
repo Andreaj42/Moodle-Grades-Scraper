@@ -1,5 +1,4 @@
 import smtplib
-import traceback
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
@@ -18,7 +17,7 @@ class MailNotifier():
         ch = StreamHandler()
         ch.setFormatter(formatter)
         self.logger.addHandler(ch)
-        
+
     def __send_mail(self, msg: MIMEMultipart, recipient: str) -> None:
         try:
             server = smtplib.SMTP(self.__smtp_server, self.__smtp_port)
@@ -28,6 +27,7 @@ class MailNotifier():
             server.login(self.__smtp_username, self.__smtp_password)
             server.sendmail(self.__smtp_username, recipient, msg.as_string())
             server.quit()
+            self.logger.info("Mail envoyé avec succès à l'adresse : " + recipient)
         except Exception as e:
             self.logger.exception("Erreur lors de l'envoi du mail à l'adresse : " + recipient)
 
@@ -140,7 +140,6 @@ class MailNotifier():
         html_part = MIMEText(html_content, 'html')
         msg.attach(html_part)
         self.__send_mail(msg, recipient)
-        self.logger.info("Mail envoyé avec succès à l'adresse : " + recipient)
     
     def alert(self, subject: str, recipients: List[str]):
         for recipient in recipients:
