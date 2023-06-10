@@ -31,6 +31,22 @@ class DatabaseConnector:
                 "Erreur lors de la connexion à MariaDB.", exc_info=format_exc())
             exit(-1)
 
+    def check_if_not_exists(self):
+        sql = f"""SHOW DATABASES"""
+        try:
+            custom_config = self.config
+            cnx = mysql.connector.connect(**custom_config)
+            cur = cnx.cursor(buffered=True)
+            cur.execute(sql)
+            result = cur.fetchall()
+            cur.close()
+            cnx.close()
+            return False if self.database in result[0] else True 
+        except:
+            self.logger.critical(
+                f"Erreur lors de l'affichage des bases dans la base de données.", exc_info=format_exc())
+            exit(-1)
+
     def __drop_database(self, name: str):
         sql = f"DROP DATABASE IF EXISTS {name}"
         try:
