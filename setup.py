@@ -10,6 +10,7 @@ setup(
         'charset-normalizer==3.1.0',
         'idna==3.4',
         'requests==2.28.2',
+        'mysql-connector-python==8.0.33',
         'setuptools==58.1.0',
         'soupsieve==2.4',
         'urllib3==1.26.15'
