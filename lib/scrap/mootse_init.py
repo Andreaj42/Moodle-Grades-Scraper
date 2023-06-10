@@ -1,16 +1,18 @@
-import os
 import logging
+import os
 
+import mysql.connector
 import requests
 from bs4 import BeautifulSoup
 
-from config.config import (MOOTSE_PASSWORD, MOOTSE_URL, MOOTSE_USERNAME)
+from config.config import MOOTSE_PASSWORD, MOOTSE_URL, MOOTSE_USERNAME
+from lib.database import DatabaseConnector
 
 
 class MootseInit():
     """ Initialisation de Mootse (le moodle de Télécom Saint-Étienne) """
 
-    def __init__(self, path : str = "") -> None:
+    def __init__(self, path: str = "") -> None:
         # Initialisation de la session
         session = requests.Session()
         login_response = session.post(f"{MOOTSE_URL}/login/index.php")
@@ -35,20 +37,23 @@ class MootseInit():
         # Nettoyage du scrapping
         tbody = notes_soup.tbody
         links = tbody.find_all("a")
-        contents = [link["href"] + " : " + link.text for link in links]
 
-        with open(path+"url.txt", "w", encoding="utf-8") as f:
-            for content in contents:
-                f.write(content + "\n")
+        # Enregistrement en base
+        db = DatabaseConnector()
+        db.perform_healthcheck()
+        db.setup_database()
 
-        if not os.path.exists(path+"pages"):
-            os.makedirs(path+"pages")
+        for topic_record in links:
+            topic_url = topic_record["href"]
+            topic_name = topic_record.text
+            content = session.get(topic_url)
+            temp = BeautifulSoup(content.text, "html.parser")
+            content = temp.tbody.text
+            db.insert_new_topic(
+                topic=topic_name,
+                link=topic_url,
+                content=content
+            )
 
-        with open(path+'url.txt', 'r', encoding="utf-8") as f1:
-            for line in f1:
-                parts = line.strip().split(" : ")
-                temp = session.get(parts[0])
-                temp = BeautifulSoup(temp.text, "html.parser")
-                temp = temp.tbody
-                with open(path+"pages/" + parts[1], "w", encoding="utf-8") as f2:
-                    f2.write(str(temp))
+        tt = db.get_topics()
+        print(tt)

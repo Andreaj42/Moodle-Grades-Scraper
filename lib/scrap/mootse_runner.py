@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from config.config import (DISCORD_WEBHOOK_URL, MAIL_PASSWORD, MAIL_PORT,
                            MAIL_RECIPIENTS, MAIL_SERVER, MAIL_USERNAME,
                            MOOTSE_PASSWORD, MOOTSE_URL, MOOTSE_USERNAME)
+from lib.database import DatabaseConnector
 from lib.discord import DiscordNotifier
 from lib.mail import MailNotifier
 
@@ -20,6 +21,7 @@ class MootseRunner():
         self.mootse_username = MOOTSE_USERNAME
         self.mootse_password = MOOTSE_PASSWORD
         self.mootse_url = MOOTSE_URL
+        self.db = DatabaseConnector()
 
     def __configure_logger(self):
         logger = getLogger(__name__)
@@ -81,21 +83,19 @@ class MootseRunner():
             self.logger.critical("Impossible d'envoyer l'alerte Discord.")
 
     def __check_for_new_notes(self, session, path):
-        with open(path+'url.txt', 'r', encoding="utf-8") as f1:
-            for line in f1:
-                self.logger.debug(f"Récupération de l'URL : {line}.")
-                parts = line.strip().split(" : ")
-                temp = session.get(parts[0])
-                temp = BeautifulSoup(temp.text, "html.parser")
-                temp = temp.tbody
-                with open(path+"pages/" + parts[1], "r", encoding="utf-8") as f2:
-                    contents = f2.read()
-                    if contents != str(temp):
-                        self.logger.info(
-                            f"Nouvelle note détectée en : {parts[1]}.")
-                        with open(path+"pages/" + parts[1], "w", encoding="utf-8") as f2:
-                            f2.write(str(temp))
-                            self.__alert(parts[1])
+
+        topics = self.db.get_topics()
+        for record in topics:
+            url = record[2]
+            temp = session.get(url)
+            temp = BeautifulSoup(temp.text, "html.parser")
+            temp = temp.tbody.text
+
+            if record[1] != temp:
+                self.logger.info(
+                    f"Nouvelle note détectée en : {record[0]}.")
+                self.db.update_topic(url, temp)
+                self.__alert(record[0])
 
     def run_check(self):
         try:
