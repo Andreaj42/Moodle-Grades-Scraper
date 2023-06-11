@@ -2,6 +2,10 @@ __pycache__/
 _venv/
 pages/
 config.ini
-config/config.py
 *.html
 .gitignore
+.env
+script.sh
+main.py
+lib/database.py
+.vscode/settings.json

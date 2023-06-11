@@ -1,54 +1,62 @@
-import os
-import logging
+from traceback import format_exc
 
-import requests
 from bs4 import BeautifulSoup
 
-from config.config import (MOOTSE_PASSWORD, MOOTSE_URL, MOOTSE_USERNAME)
+from lib.database import DatabaseConnector
+from lib.scrap.mootse_utils import MootseUtils
 
 
-class MootseInit():
+class MootseInit(MootseUtils):
     """ Initialisation de Mootse (le moodle de Télécom Saint-Étienne) """
 
-    def __init__(self, path : str = "") -> None:
-        # Initialisation de la session
-        session = requests.Session()
-        login_response = session.post(f"{MOOTSE_URL}/login/index.php")
+    def __init__(self) -> None:
+        super().__init__()
+        self.db = DatabaseConnector()
 
-        # Extraction du token
-        soup = BeautifulSoup(login_response.text, "html.parser")
-        token = soup.select_one("input[name=logintoken]")["value"]
+    def __get_all_topics(self, session):
+        try:
+            self.logger.info("Récupération des matières sur Mootse...")
+            notes_url = f"{self.mootse_url}/grade/report/overview/index.php"
+            notes_response = session.get(notes_url)
+            notes_soup = BeautifulSoup(notes_response.text, "html.parser")
 
-        # Connexion
-        login_data = {
-            "username": MOOTSE_USERNAME,
-            "password": MOOTSE_PASSWORD,
-            "logintoken": token
-        }
-        session.post(f"{MOOTSE_URL}/login/index.php", data=login_data)
+            tbody = notes_soup.tbody
+            links = tbody.find_all("a")
+            return links
+        except:
+            self.logger.critical("Impossible de récupérer les matières sur Mootse", exc_info=format_exc())
 
-        # Scrapping des url des notes
-        notes_url = f"{MOOTSE_URL}/grade/report/overview/index.php"
-        notes_response = session.get(notes_url)
-        notes_soup = BeautifulSoup(notes_response.text, "html.parser")
+    def __store_topics_database(self, session, links):
+        self.db.perform_healthcheck()
+        self.db.setup_database()        
 
-        # Nettoyage du scrapping
-        tbody = notes_soup.tbody
-        links = tbody.find_all("a")
-        contents = [link["href"] + " : " + link.text for link in links]
+        for topic_record in links:
+            topic_url = topic_record["href"]
+            topic_name = topic_record.text
+            content = session.get(topic_url)
+            temp = BeautifulSoup(content.text, "html.parser")
+            content = temp.tbody.text
+            self.db.insert_new_topic(
+                topic=topic_name,
+                link=topic_url,
+                content=content
+            )
 
-        with open(path+"url.txt", "w", encoding="utf-8") as f:
-            for content in contents:
-                f.write(content + "\n")
+    def retrieve_topics(self):
+        self.logger.info("Initialisation du Mootse Runner...")
+        try:
+            session = self.create_mootse_session()
+            self.login_to_mootse(session)
+        except:
+            self.logger.critical(
+                "Erreur lors de la connexion à Mootse.", exc_info=format_exc())
+            exit(-1)
 
-        if not os.path.exists(path+"pages"):
-            os.makedirs(path+"pages")
-
-        with open(path+'url.txt', 'r', encoding="utf-8") as f1:
-            for line in f1:
-                parts = line.strip().split(" : ")
-                temp = session.get(parts[0])
-                temp = BeautifulSoup(temp.text, "html.parser")
-                temp = temp.tbody
-                with open(path+"pages/" + parts[1], "w", encoding="utf-8") as f2:
-                    f2.write(str(temp))
+        try:
+            links = self.__get_all_topics(session)
+            self.__store_topics_database(session, links)
+        except:
+            self.logger.critical(
+                "Impossible de traiter les matières de Mootse.", exc_info=format_exc())
+            exit(-1)
+        self.logger.info("Initialisation du Mootse Runner réussie.")

@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mootse-mariadb:
+    container_name: mootse-mariadb
+    image: docker.io/library/mariadb:10.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+    networks:
+      - mootse-network
+
+  mootse-runner:
+    container_name: mootse-runner
+    env_file: .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mootse-mariadb
+    restart: always
+    networks:
+      - mootse-network
+
+networks:
+  mootse-network:
