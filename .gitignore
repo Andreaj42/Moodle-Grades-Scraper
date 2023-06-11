@@ -9,3 +9,4 @@ script.sh
 main.py
 lib/database.py
 .vscode/settings.json
+docker-compose.yaml
