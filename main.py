@@ -7,5 +7,5 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 if __name__ == "__main__":
     scheduler = BlockingScheduler(timezone='Europe/Paris')
-    scheduler.add_job(do_check, "interval", seconds=30)
+    scheduler.add_job(do_check, "interval", seconds=300)
     scheduler.start()
