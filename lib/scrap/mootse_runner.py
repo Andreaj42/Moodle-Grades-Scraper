@@ -25,13 +25,17 @@ class MootseRunner():
 
     def __configure_logger(self):
         logger = getLogger(__name__)
-        logger.setLevel(INFO)
-        formatter = Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        ch = StreamHandler()
-        ch.setFormatter(formatter)
-        logger.addHandler(ch)
+        
+        if not logger.hasHandlers():
+            logger.setLevel(INFO)
+            formatter = Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            ch = StreamHandler()
+            ch.setFormatter(formatter)
+            logger.propagate = False
+            logger.addHandler(ch)
+        
         return logger
+
 
     def __create_mootse_session(self):
         session = requests.Session()
@@ -96,6 +100,7 @@ class MootseRunner():
                     f"Nouvelle note détectée en : {record[0]}.")
                 self.db.update_topic(url, temp)
                 self.__alert(record[0])
+
 
     def run_check(self):
         try:

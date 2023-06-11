@@ -54,6 +54,3 @@ class MootseInit():
                 link=topic_url,
                 content=content
             )
-
-        tt = db.get_topics()
-        print(tt)
