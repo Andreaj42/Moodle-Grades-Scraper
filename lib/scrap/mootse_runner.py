@@ -1,6 +1,5 @@
 from traceback import format_exc
 
-import requests
 from bs4 import BeautifulSoup
 
 from config.config import (DISCORD_WEBHOOK_URL, MAIL_PASSWORD, MAIL_PORT,

@@ -56,6 +56,6 @@ class MootseUtils():
         except ConnectionError:
             exit(-1)
         except:
-            self.logger.debug("Authentification réussie à Mootse.")
+            self.logger.debug("Authentification réussie à Mootse.", exc_info=format_exc())
 
         self.logger.info("Connection à Mootse réussie.")
