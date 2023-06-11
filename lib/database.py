@@ -1,4 +1,4 @@
-from logging import getLogger
+from logging import INFO, Formatter, StreamHandler, getLogger
 from traceback import format_exc
 from typing import Optional
 
@@ -17,7 +17,21 @@ class DatabaseConnector:
             'port': DB_PORT,
         }
         self.database = PROMO
-        self.logger = getLogger()
+        self.logger = self.__configure_logger()
+
+    def __configure_logger(self):
+        logger = getLogger(__name__)
+
+        if not logger.hasHandlers():
+            logger.setLevel(INFO)
+            formatter = Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            ch = StreamHandler()
+            ch.setFormatter(formatter)
+            logger.propagate = False
+            logger.addHandler(ch)
+
+        return logger
 
     def perform_healthcheck(self):
         try:
@@ -26,6 +40,7 @@ class DatabaseConnector:
             cur.execute("SHOW STATUS LIKE 'Ssl_cipher'")
             cur.close()
             cnx.close()
+            self.logger.info("Connexion à la base de données réussie.")
         except:
             self.logger.critical(
                 "Erreur lors de la connexion à MariaDB.", exc_info=format_exc())
@@ -34,14 +49,19 @@ class DatabaseConnector:
     def check_if_not_exists(self):
         sql = f"""SHOW DATABASES"""
         try:
-            custom_config = self.config
-            cnx = mysql.connector.connect(**custom_config)
+            self.logger.info(
+                f"Vérification de la présence d'une base {self.database}...")
+            cnx = mysql.connector.connect(**self.config)
             cur = cnx.cursor(buffered=True)
             cur.execute(sql)
             result = cur.fetchall()
             cur.close()
             cnx.close()
-            return False if self.database in result[0] else True 
+            exists = False if self.database in [
+                rec[0] for rec in result] else True
+            self.logger.info(
+                f"La base {self.database} n'existe pas : {exists}")
+            return exists
         except:
             self.logger.critical(
                 f"Erreur lors de l'affichage des bases dans la base de données.", exc_info=format_exc())
@@ -55,6 +75,7 @@ class DatabaseConnector:
             cur.execute(sql)
             cur.close()
             cnx.close()
+            self.logger.info(f"Base de données {name} supprimée.")
         except:
             self.logger.critical(
                 f"Erreur lors de la suppression de la base {name}.", exc_info=format_exc())
@@ -68,6 +89,7 @@ class DatabaseConnector:
             cur.execute(sql)
             cur.close()
             cnx.close()
+            self.logger.info(f"Base de données {name} créée.")
         except:
             self.logger.critical(
                 f"Erreur lors de la création de la base {name}.", exc_info=format_exc())
@@ -87,6 +109,7 @@ class DatabaseConnector:
             cur.execute(sql)
             cur.close()
             cnx.close()
+            self.logger.info(f"Table {name} créée.")
         except:
             self.logger.critical(
                 f"Erreur lors de la création de la table dans la base {name}.", exc_info=format_exc())
@@ -94,7 +117,6 @@ class DatabaseConnector:
 
     def __send_query(self, query: str, val: tuple):
         try:
-            # Faire plus jojo
             custom_config = self.config
             custom_config["database"] = self.database
 
@@ -128,6 +150,7 @@ class DatabaseConnector:
     def insert_new_topic(self, topic: str, link: str, content: str):
         sql = f"""INSERT INTO Topics (Topic, Content, Link) VALUES (%s, %s, %s)"""
         val = (topic, content, link)
+        self.logger.info(f"Insertion de la matière : {topic}.")
         self.__send_query(sql, val)
 
     def update_topic(self, link: str, content: str):
@@ -136,9 +159,11 @@ class DatabaseConnector:
         self.__send_query(sql, val)
 
     def setup_database(self):
+        self.logger.info("Préparation de la base de données...")
         self.__drop_database(self.database)
         self.__create_database(self.database)
         self.__create_table(self.database)
+        self.logger.info("Base de données configurée.")
 
     def get_topics(self):
         query = "SELECT * FROM Topics"

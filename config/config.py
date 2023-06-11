@@ -1,4 +1,5 @@
 from config.loader import load_variables
+
 PROMO = load_variables("PROMO")
 MOOTSE_URL = load_variables("MOOTSE_URL")
 MOOTSE_USERNAME = load_variables("MOOTSE_USERNAME")
