@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  mootse-mariadb:
+    container_name: mootse-mariadb
+    image: docker.io/library/mariadb:10.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD:
+    ports:
+      - "3306:3306"
+
+  mootse-runner:
+    container_name: mootse-runner
+    environment:
+      MOOTSE_URL:
+      MOOTSE_USERNAME:
+      MOOTSE_PASSWORD:
+      MAIL_USERNAME:
+      MAIL_PASSWORD:
+      MAIL_SERVER:
+      MAIL_PORT:
+      MAIL_RECIPIENTS:
+      DISCORD_WEBHOOK_URL:
+      DB_HOST:
+      DB_USER:
+      DB_PASSWORD:
+      DB_PORT:
+      PROMO:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mootse-mariadb
+    restart: always
