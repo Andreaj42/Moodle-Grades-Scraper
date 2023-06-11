@@ -4,6 +4,7 @@ setup(
     name='mootse-runner',
     version='1.1',
     install_requires=[
+        'APScheduler==3.10.1',
         'beautifulsoup4==4.12.2',
         'bs4==0.0.1',
         'certifi==2022.12.7',
