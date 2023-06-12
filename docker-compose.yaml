@@ -1,12 +1,11 @@
-version: '3'
+version: '2'
 
 services:
   mootse-mariadb:
     container_name: mootse-mariadb
     image: docker.io/library/mariadb:10.4
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+    env_file: .env
     networks:
       - mootse-network
 
