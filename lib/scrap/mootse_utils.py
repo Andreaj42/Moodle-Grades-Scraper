@@ -34,7 +34,7 @@ class MootseUtils():
         return session
 
     def login_to_mootse(self, session):
-        self.logger.info("Connection à Mootse...")
+        self.logger.info("Connexion à Mootse...")
         login_response = session.post(f"{self.mootse_url}/login/index.php")
         soup = BeautifulSoup(login_response.text, "html.parser")
         token = soup.select_one("input[name=logintoken]")["value"]
@@ -58,4 +58,4 @@ class MootseUtils():
         except:
             self.logger.debug("Authentification réussie à Mootse.", exc_info=format_exc())
 
-        self.logger.info("Connection à Mootse réussie.")
+        self.logger.info("Connexion à Mootse réussie.")

@@ -75,7 +75,7 @@ class DatabaseConnector:
             cur.execute(sql)
             cur.close()
             cnx.close()
-            self.logger.info(f"Base de données {name} supprimée.")
+            self.logger.info(f"Base de données {name} supprimée (sous réserve d'existance).")
         except:
             self.logger.critical(
                 f"Erreur lors de la suppression de la base {name}.", exc_info=format_exc())
