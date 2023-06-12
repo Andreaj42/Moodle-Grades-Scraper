@@ -18,24 +18,26 @@ class MootseRunner(MootseUtils):
         self.db = DatabaseConnector()
 
     def __alert(self, subject: str) -> None:
-        try:
-            mail = MailNotifier(
-                MAIL_USERNAME,
-                MAIL_PASSWORD,
-                MAIL_SERVER,
-                MAIL_PORT
-            )
-            mail.alert(subject, MAIL_RECIPIENTS)
-        except:
-            self.logger.critical(
-                "Impossible d'envoyer les alertes mails.", exc_info=format_exc())
+        if not (MAIL_RECIPIENTS == ['']):
+            try:
+                mail = MailNotifier(
+                    MAIL_USERNAME,
+                    MAIL_PASSWORD,
+                    MAIL_SERVER,
+                    MAIL_PORT
+                )
+                mail.alert(subject, MAIL_RECIPIENTS)
+            except:
+                self.logger.critical(
+                    "Impossible d'envoyer les alertes mails.", exc_info=format_exc())
 
-        try:
-            discord = DiscordNotifier(DISCORD_WEBHOOK_URL)
-            discord.alert(subject)
-        except:
-            self.logger.critical(
-                "Impossible d'envoyer l'alerte Discord.", exc_info=format_exc())
+        if DISCORD_WEBHOOK_URL:
+            try:
+                discord = DiscordNotifier(DISCORD_WEBHOOK_URL)
+                discord.alert(subject)
+            except:
+                self.logger.critical(
+                    "Impossible d'envoyer l'alerte Discord.", exc_info=format_exc())
 
     def __check_for_new_notes(self, session):
 

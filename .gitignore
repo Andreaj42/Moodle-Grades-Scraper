@@ -1,11 +1,6 @@
 __pycache__/
 _venv/
-pages/
-config.ini
-*.html
 .gitignore
 .env
 script.sh
-main.py
-lib/database.py
-.vscode/settings.json
+.vscode/
