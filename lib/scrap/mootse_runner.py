@@ -18,7 +18,8 @@ class MootseRunner(MootseUtils):
         self.db = DatabaseConnector()
 
     def __alert(self, subject: str) -> None:
-        if not (MAIL_RECIPIENTS == ['']):
+        if MAIL_RECIPIENTS:
+            recipients = MAIL_RECIPIENTS.split(";")
             try:
                 mail = MailNotifier(
                     MAIL_USERNAME,
@@ -26,7 +27,7 @@ class MootseRunner(MootseUtils):
                     MAIL_SERVER,
                     MAIL_PORT
                 )
-                mail.alert(subject, MAIL_RECIPIENTS)
+                mail.alert(subject, recipients)
             except:
                 self.logger.critical(
                     "Impossible d'envoyer les alertes mails.", exc_info=format_exc())
