@@ -21,7 +21,7 @@ To install Moodle Grades Scraper with Docker and Docker Compose, follow these st
 
 1. Clone the project
 ```
-git clone git@github.com:Andreaj42/Moodle-Grades-Scraper.git
+git clone https://github.com/Andreaj42/Moodle-Grades-Scraper.git
 ```
 2. Go to the project's directory
 ```
