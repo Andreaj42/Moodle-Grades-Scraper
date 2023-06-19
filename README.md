@@ -2,7 +2,6 @@
 Moodle Grades Scraper is a simple tool to be notified of new grades on Moodle 💯.
 
 ## Features 
-
 - E-mail alerting 📫
 - Discord notifications (webhook) 🎤
 - MariaDB storage 💾
@@ -90,10 +89,8 @@ python main.py
 | SCAN_INTERVAL       | Scan interval in seconds (i.e: 120 for 2 minutes)                                      |    
 
 ## Report a bug 🐛
-
 Simply open an issue in this repository.
 
 
 ## Disclaimer ⚠️
-
-Moodles Grades Scraper is not part of Moodle.
+Moodle Grades Scraper is not part of Moodle.
