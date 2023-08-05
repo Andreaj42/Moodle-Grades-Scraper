@@ -11,5 +11,5 @@ try:
     )
     cnx.close()
     exit(0)
-except:
+except mysql.connector.Error:
     exit(1)
