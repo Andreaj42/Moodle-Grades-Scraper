@@ -3,9 +3,11 @@ version: '2'
 services:
   mootse-mariadb:
     container_name: mootse-mariadb
+    env_file: .env
     image: docker.io/library/mariadb:10.4
     restart: always
-    env_file: .env
+    healthcheck:
+      test: '/usr/local/bin/healthcheck.sh --su-mysql --connect --innodb_initialized'
     networks:
       - mootse-network
 
@@ -18,6 +20,8 @@ services:
     depends_on:
       - mootse-mariadb
     restart: always
+    healthcheck:
+      test: 'python healthcheck.py'
     networks:
       - mootse-network
 
