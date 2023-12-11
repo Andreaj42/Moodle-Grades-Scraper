@@ -1,4 +1,7 @@
+
 # Moodle Grades Scraper
+> :warning: **This project is now maintained by L'Usine Logicielle: https://github.com/L-Usine-Logicielle/Moodle-Grades-Scraper**
+
 Moodle Grades Scraper is a simple tool to be notified of new grades on Moodle 💯.
 
 ## Features 
